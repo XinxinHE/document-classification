@@ -1,0 +1,49 @@
+
+.page-logo {
+  height: 32px;
+  margin-bottom: 10px;
+}
+.page-name {
+  font-size: 20px;
+  font-weight: 400;
+  color: #5870ab;
+  margin-left: 10px;
+}
+.page-logo, .page-name {
+  display: inline-block;
+}
+.search-area {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 90px;
+  padding-right: 20px;
+  background: #5870ab;
+}
+.table-wrapper {
+  border-top: solid 1px #ddd;
+}
+@media screen and (min-width: 500px) {
+    .modal-large {
+      width: auto; /* New width for large modal */
+      margin: 30px 30px;
+    }
+}
+.pdf-viewer {
+  width: 100%;
+}
+
+.status-tab > ul > li.active > a {
+  color: white;
+  background-color: #5870ab;
+  border-bottom: 1px solid #5870ab;
+}
+.status-tab > ul > li.active > a:hover {
+  color: white;
+  background-color: #5870ab;
+}
+.nav-tabs.nav-justified>li>a,
+.nav-tabs.nav-justified>.active>a,
+.nav-tabs.nav-justified>.active>a:focus,
+.nav-tabs.nav-justified>.active>a:hover {
+  border: 0px;
+}

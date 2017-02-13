@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="documentClassification">
+<head lang="en">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="image/favicon.ico">
+
+<title>Telamon Document Classification Demo</title>
+  <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Optional theme -->
+<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <img class="page-logo" src="image/brandicon.png" alt="TELAMON">
+        <h1 class="page-name">Telamon Document Classification</h1>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid" ng-controller="DocCtrl">
+    <div class="status-tab">
+        <ul class="nav nav-tabs nav-justified">
+          <li role="presentation" ng-class="{active:isSelected(1)}"><a ng-click="select(1)">New</a></li>
+          <li role="presentation" ng-class="{active:isSelected(2)}"><a ng-click="select(2)">Exception</a></li>
+          <li role="presentation" ng-class="{active:isSelected(3)}"><a ng-click="select(3)">Hold</a></li>
+          <li role="presentation" ng-class="{active:isSelected(4)}"><a ng-click="select(4)">Processed</a></li>
+        </ul>
+    </div>
+
+    <div class="search-area">
+      <div class="input-group">
+        <input class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Search</button>
+        </span>
+      </div>
+    </div>
+
+    <div id="fileViewer" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="viewFile" aria-hidden="true">
+      <div class="modal-dialog modal-large">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal" type="button" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            <h5 class="modal-title">File Detail</h5>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-xs-9">
+                <embed class="pdf-viewer" src="pdf/test.pdf" width="500px" height="800px">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>File Num</th>
+            <th>File Name</th>
+            <th>Status</th>
+            <th>Entered At</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat = "file in files | filter: {status: filterText}">
+            <td>{{file.fileid}}</td>
+            <td>{{file.name}}</td>
+            <td>{{file.status}}</td>
+            <td>{{file.enterdate}}</td>
+            <td><button class="btn btn-primary" data-toggle="modal" data-target="#fileViewer">View</button></td>
+          </tr>
+        </tbody>
+    </div>
+
+  </div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+<!--AngularFire tutorial: https://www.firebase.com/docs/web/libraries/angular/quickstart.html#section-arrays-->
+
+</script>
+<script src="js/service.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>
