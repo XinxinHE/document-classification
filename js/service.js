@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('documentClassification', ['firebase'])
+angular.module('documentClassification', ['firebase', 'ngFileUpload'])
   .service('DocService', ['$firebaseArray', function($firebaseArray){
     var config = {
       apiKey: "AIzaSyDs07kiwPNRuw4CnFPwQt6tCK3teHlHjRc",

@@ -1,4 +1,9 @@
-
+.navbar-upload{
+  float: right;
+  margin-top :20px;
+  color: #5870ab;
+  font-size: 18px;
+}
 .page-logo {
   height: 32px;
   margin-bottom: 10px;
@@ -32,18 +37,53 @@
   width: 100%;
 }
 
-.status-tab > ul > li.active > a {
-  color: white;
-  background-color: #5870ab;
-  border-bottom: 1px solid #5870ab;
-}
-.status-tab > ul > li.active > a:hover {
-  color: white;
-  background-color: #5870ab;
-}
+
 .nav-tabs.nav-justified>li>a,
 .nav-tabs.nav-justified>.active>a,
 .nav-tabs.nav-justified>.active>a:focus,
 .nav-tabs.nav-justified>.active>a:hover {
   border: 0px;
+}
+.nav-tabs.nav-justified>li>a,
+.nav-tabs.nav-justified>li>a:hover {
+  background-color: #f1f1f1;
+  border-radius: 0px;
+  cursor: pointer;
+}
+.status-tab>ul>li.active>a {
+  color: white;
+  background-color: #5870ab;
+  border-bottom: 1px solid #5870ab;
+}
+.status-tab>ul>li.active>a:hover {
+  color: white;
+  background-color: #5870ab;
+  cursor: default;
+}
+
+.btn:hover{
+  color: #fff;
+}
+
+.button-view,
+.button-upload,
+.button-delete {
+  color: #fff;
+  font-size: 10px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  width: 60px;
+
+}
+
+.button-view {
+  background-color: #337ab7;
+}
+
+.button-upload {
+  background-color: #53bb28;
+}
+
+.button-delete {
+  background-color: #b54b4b;
 }
