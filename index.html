@@ -65,25 +65,46 @@
 
               <div class="col-sm-4">
                 <form class="form-horizontal">
+<<<<<<< HEAD
+=======
+                    <div class="form-group row">
+                      <label class="col-sm-3 control-label" for="fileID">File ID</label>
+                      <div class="col-sm-8 offset-sm-1">
+                        <input class="form-control" type="text" id="fileID" ng-model="files[index].fileid">
+                      </div>
+                    </div>
+>>>>>>> origin/master
 
                     <div class="form-group row">
                       <label class="col-sm-3 control-label" for="fileName">File Name</label>
                       <div class="col-sm-8 offset-sm-1">
+<<<<<<< HEAD
                         <input class="form-control" type="text" id="fileName" ng-model="file.name">
+=======
+                        <input class="form-control" type="text" id="fileName" ng-model="files[index].name">
+>>>>>>> origin/master
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-3 control-label" for="fileStatus">File Status</label>
                       <div class="col-sm-8 offset-sm-1">
+<<<<<<< HEAD
                         <input class="form-control" type="text" id="fileStatus" ng-model="file.status">
+=======
+                        <input class="form-control" type="text" id="fileStatus" ng-model="files[index].status">
+>>>>>>> origin/master
                       </div>
                     </div>
 
                     <div class="form-group row">
                       <label class="col-sm-3 control-label" for="fileDate">Enter Date</label>
                       <div class="col-sm-8 offset-sm-1">
+<<<<<<< HEAD
                         <input class="form-control" type="text" id="fileDate" ng-model="file.enterdate">
+=======
+                        <input class="form-control" type="text" id="fileDate" ng-model="files[index].enterdate">
+>>>>>>> origin/master
                       </div>
                     </div>
 
@@ -105,6 +126,10 @@
       <table class="table table-striped">
         <thead>
           <tr>
+<<<<<<< HEAD
+=======
+            <th>File ID</th>
+>>>>>>> origin/master
             <th>File Name</th>
             <th>Status</th>
             <th>Entered At</th>
@@ -123,9 +148,14 @@
           <tr ng-repeat="file in files | filter: {status: filterText}">
             <td>{{file.name}}</td>
             <td>{{file.status}}</td>
+<<<<<<< HEAD
             <td>{{file.enterdate | date: 'short'}}</td>
             <td><button class="btn button-view" ng-click="fileSelect(file)" data-toggle="modal" data-target="#fileViewer">View</button>
             <button class="btn button-delete" ng-click="removeFile(file)">Remove</button></td>
+=======
+            <td>{{file.enterdate}}</td>
+            <td><button class="btn view-button" ng-click="fileSelect(file)" data-toggle="modal" data-target="#fileViewer">View</button></td>
+>>>>>>> origin/master
           </tr>
 
         </tbody>

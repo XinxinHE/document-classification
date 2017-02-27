@@ -61,8 +61,14 @@ var app = angular.module('documentClassification')
 
   $scope.filterText = 'new';
   $scope.tab = 1;
+<<<<<<< HEAD
   $scope.file = {};
   //$scope.files = angular.fromJson(DocService.getFiles());
+=======
+  $scope.index  = 0;
+  $scope.files = angular.fromJson(DocService.getFiles());
+
+>>>>>>> origin/master
 
   // $scope.file = DocService.getOneFile(111223);
 
@@ -84,12 +90,26 @@ var app = angular.module('documentClassification')
   };
 
   $scope.fileSelect = function(getFile){
+<<<<<<< HEAD
     $scope.file = getFile;
+=======
+
+     for(var file in $scope.files) {
+     if($scope.files[file].$id === getFile.$id) {
+       $scope.index = file;
+     }
+   }
+
+>>>>>>> origin/master
   };
 
   $scope.submit = function(){
 
+<<<<<<< HEAD
     var update = $scope.files.$getRecord($scope.file.$id);
+=======
+    var update = $scope.files.$getRecord($scope.files[$scope.index].$id);
+>>>>>>> origin/master
   //  console.log(update);
     $scope.files.$save(update).then(function() {
       alert('Profile saved!');

@@ -1,7 +1,12 @@
 'use strict'
 
+<<<<<<< HEAD
 angular.module('documentClassification', ['firebase', 'ngFileUpload'])
   .service('DocService', ['$firebaseArray', function($firebaseArray){
+=======
+angular.module('documentClassification', ['firebase'])
+  .service('DocService', ['$firebaseArray', '$firebaseObject', function($firebaseArray, $firebaseObject){
+>>>>>>> origin/master
     var config = {
       apiKey: "AIzaSyDs07kiwPNRuw4CnFPwQt6tCK3teHlHjRc",
       authDomain: "jsondb-3c47e.firebaseapp.com",
@@ -12,8 +17,20 @@ angular.module('documentClassification', ['firebase', 'ngFileUpload'])
     firebase.initializeApp(config);
 
     this.getFiles = function(){
+<<<<<<< HEAD
       var ref = firebase.database().ref().child("files");
       return $firebaseArray(ref);
     }
 
+=======
+      var ref = firebase.database().ref().child('files');
+      return $firebaseArray(ref);
+    }
+
+    // this.getOneFile = function(fileId){
+    //   var ref = firebase.database().ref().child('files').child(file);
+    //   return $firebaseObject(ref);
+    // }
+
+>>>>>>> origin/master
   }]);
